@@ -1,0 +1,22 @@
+
+1)i)	column “Order_id”: The oder number 
+	column “quantity”:  quantity of the item ordered
+	column “item_name”: name of item from the menu 
+	column “choice_description”: description of ordered item, ingredients, spice level
+	column “item_price”: cost of the item, not the total order. 
+
+ii) There are 1834 orders 
+iii) there are 4623 lines in the files
+iv) There are 553 orders of chicken burrito and 368 orders of “steak burrito”. Chicken burrito is more popular
+	grep -i “chicken burrito” chipotle.tsv | wc -l 
+	grep -i “steak burrito” chipotle.tsv | wc -l
+v) chicken burrito have more black beans than pinto beans. I first got the lines (using grep) of all chicken burrito, and then individually counted the lines that has pinto and black beans 
+grep -i “chicken burrito” chipotle.tsv | grep -i “black beans” | wc -l
+
+2) find . *csv *tsv , there are chipotle.tsv, 
+
+3) there are 15 occurrences of the word “dictionary” in the DAT7 repo
+	grep -ir “dictionary” . | wc -l
+4) Most popular item is Chips and Guacamole, It was ordered 349 times for a price of $4.45
+	cut -f5,3 chipotle.tsv | sort| uniq -c |sort 
+	
